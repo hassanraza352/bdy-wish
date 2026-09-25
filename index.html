@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Falling petals (decorative, behind everything) ===== -->
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <span class="nav-logo">H &amp; L</span>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#letter" class="nav-link">Letter</a>
+      <a href="#moments" class="nav-link">Moments</a>
+      <a href="#whyyou" class="nav-link">Why You</a>
+      <a href="#celebrate" class="nav-link">Celebrate</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HOME / HERO ===== -->
+<section class="hero" id="home">
+  <p class="eyebrow">Today Is A Very Special Day</p>
+  <h1 class="hero-title">Happy<br>Birthday</h1>
+  <p class="script-line">My Beautiful Love <span class="flower">✿</span></p>
+  <p class="hero-sub">You light up every room you enter, every day you're in it.</p>
+  <button class="btn btn-primary" id="openSurprise">Open Your Surprise</button>
+</section>
+
+<!-- ===== SECRET MESSAGE MODAL ===== -->
+<div class="modal-overlay" id="secretModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeSecret" aria-label="Close">&times;</button>
+    <div class="modal-icon">🎁</div>
+    <h3 class="modal-title">A Secret Message...</h3>
+    <p class="modal-text">There are not enough words in any language to express how much you mean to me. You are the morning I look forward to, the evening I treasure, and every beautiful moment in between.</p>
+    <p class="modal-signature">Happy Birthday, my love.</p>
+    <p class="modal-text">May this year be the most beautiful chapter of your story yet — loved beyond measure, today, tomorrow, and every single day after.</p>
+    <div class="modal-emojis">🌸 🎀 🍰 💐 ❤️</div>
+  </div>
+</div>
+
+<!-- ===== LETTER ===== -->
+<section class="letter" id="letter">
+  <p class="eyebrow">From The Bottom Of My Heart</p>
+  <h2 class="section-title">A Letter Written in Stars</h2>
+  <div class="letter-card">
+    <p>On this extraordinary day that the universe chose to bring you into the world, I find myself completely overwhelmed by the beauty of your existence. Every single morning you open your eyes is a gift to everyone lucky enough to know you.</p>
+    <p>I carry your smile in my mind, your laughter in my quiet moments — even when it's just me and the world outside fades, I realise all over again that you are the most magnificent person I have ever had the privilege of loving.</p>
+    <p>This birthday is not just another year on the calendar. It is a new chapter in your story — and I get to keep writing it right beside you, one beautiful page at a time.</p>
+    <p class="letter-close">Yours, always &amp; completely.</p>
+  </div>
+</section>
+
+<!-- ===== MOMENTS ===== -->
+<section class="moments" id="moments">
+  <p class="eyebrow">Our Love Story In Pictures</p>
+  <h2 class="section-title">Cherished Moments</h2>
+  <p class="section-sub">Every picture holds a thousand more whispers of our beautiful journey together.</p>
+
+  <div class="gallery" id="gallery">
+    <!-- 8 placeholder photo cards -->
+    <div class="photo-card" data-caption="Coffee Mornings">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Coffee Mornings</p>
+    </div>
+    <div class="photo-card" data-caption="Movie Nights">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Movie Nights</p>
+    </div>
+    <div class="photo-card" data-caption="Golden Sunsets">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Golden Sunsets</p>
+    </div>
+    <div class="photo-card" data-caption="Flower Fields">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Flower Fields</p>
+    </div>
+    <div class="photo-card" data-caption="Starry Nights">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Starry Nights</p>
+    </div>
+    <div class="photo-card" data-caption="Candlelit Music">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Candlelit Music</p>
+    </div>
+    <div class="photo-card" data-caption="Beach Holiday">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Beach Holiday</p>
+    </div>
+    <div class="photo-card" data-caption="Autumn Walks">
+      <div class="photo-ph">📷<span>Add Your Photo</span></div>
+      <p class="photo-cap">Autumn Walks</p>
+    </div>
+
+  
+  </div>
+  <p class="gallery-hint">Tap to pause • Click to open &amp; revisit each memory</p>
+</section>
+  <div class="video-gallery">
+
+  <div class="video-card">
+    <video autoplay muted loop playsinline>
+      <source src="videos/video1.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="modal-overlay" id="lightbox">
+  <div class="lightbox-card">
+    <button class="modal-close" id="closeLightbox" aria-label="Close">&times;</button>
+    <div class="photo-ph lightbox-ph">📷<span>Add Your Photo</span></div>
+    <p class="lightbox-cap" id="lightboxCap">Coffee Mornings</p>
+  </div>
+</div>
+
+
+
+<!-- ===== WHY YOU ===== -->
+<section class="whyyou" id="whyyou">
+  <div class="orbit-wrap">
+    <div class="orbit-center">💃🕺</div>
+    <div class="orbit-ring ring1"><span class="orbit-photo">📷</span></div>
+    <div class="orbit-ring ring2"><span class="orbit-photo">📷</span></div>
+    <div class="orbit-ring ring3"><span class="orbit-photo">📷</span></div>
+    <div class="orbit-ring ring4"><span class="orbit-photo">📷</span></div>
+  </div>
+
+  <p class="eyebrow">My Everything</p>
+  <h2 class="glitch-title">Happy Birthday,<br>My Love</h2>
+  <p class="whyyou-text">Every moment with you feels like a beautiful dream. You bring so much light and joy into my life, making every single day feel truly magical.</p>
+  <p class="whyyou-text">Here is to another year of creating unforgettable memories together. I promise to always cherish you, support you, and love you unconditionally.</p>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>You Are Radiant&nbsp;&nbsp;•&nbsp;&nbsp;Forever Loved&nbsp;&nbsp;•&nbsp;&nbsp;Beautiful Soul&nbsp;&nbsp;•&nbsp;&nbsp;Light Of My Life&nbsp;&nbsp;•&nbsp;&nbsp;Born To Shine&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      <span>You Are Radiant&nbsp;&nbsp;•&nbsp;&nbsp;Forever Loved&nbsp;&nbsp;•&nbsp;&nbsp;Beautiful Soul&nbsp;&nbsp;•&nbsp;&nbsp;Light Of My Life&nbsp;&nbsp;•&nbsp;&nbsp;Born To Shine&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">✨</div><h4>Your Smile</h4><p>When you smile, every room lights up. It's the kind of smile that makes strangers feel safe and loved ones feel completely at home.</p></div>
+    <div class="why-card"><div class="why-icon">🎀</div><h4>Your Kindness</h4><p>You give reckless, keeping-no-score kindness. It's rare, generous, and absolutely breathtaking to witness.</p></div>
+    <div class="why-card"><div class="why-icon">🌸</div><h4>Your Spirit</h4><p>Even on the hardest days, your spirit never truly dims. You rise, you adapt, and you bloom beautifully no matter the season.</p></div>
+    <div class="why-card"><div class="why-icon">🎨</div><h4>Your Creativity</h4><p>You see beauty where others see ordinary. Your mind paints the world in colours most people never discover in a lifetime.</p></div>
+    <div class="why-card"><div class="why-icon">💗</div><h4>Your Love</h4><p>The way you love is a gift — deep, thoughtful, unconditional. It changes everyone lucky enough to receive even a fraction of it.</p></div>
+    <div class="why-card"><div class="why-icon">🌷</div><h4>Your Strength</h4><p>You have faced storms that would break most, yet here you stand — more radiant and more powerful for it.</p></div>
+  </div>
+
+  <div class="stats">
+    <p class="eyebrow light">By The Numbers</p>
+    <h3 class="stats-title">Love, Measured</h3>
+    <div class="stats-grid">
+      <div class="stat"><span class="stat-num" data-target="1000">0</span><span class="stat-plus">+</span><p>Days Together</p></div>
+      <div class="stat"><span class="stat-num" data-target="9999">0</span><span class="stat-plus">+</span><p>Sweet Memories</p></div>
+      <div class="stat"><span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span><p>Shared Laughs</p></div>
+      <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span><p>Love Level</p></div>
+    </div>
+  </div>
+</section>
+
+  <div class="video-gallery">
+
+
+  <div class="video-card">
+    <video autoplay muted loop playsinline>
+      <source src="videos/video2.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+<!-- ===== CELEBRATE ===== -->
+<section class="celebrate" id="celebrate">
+  <p class="eyebrow">Make A Wish</p>
+  <h2 class="section-title">Close Your Eyes &amp; Wish</h2>
+
+  <div class="cake-wrap">
+    <div class="cake" id="cake">
+      <div class="flame" id="flame"></div>
+      <div class="candle"></div>
+      <div class="tier tier-top"></div>
+      <div class="tier tier-mid"></div>
+      <div class="tier tier-bottom"></div>
+    </div>
+  </div>
+  <p class="cake-hint">Tap the button to blow out the candle.</p>
+  <button class="btn btn-primary" id="blowBtn">🎂 Blow Out The Candle!</button>
+
+  <div class="finale">
+    <h2 class="section-title finale-title">You Are My Favourite Gift<br>from the Universe</h2>
+    <p class="finale-sub">Wishing you a birthday as magical as you are 🌙</p>
+    <button class="btn btn-light" id="finaleBtn">✨ Launch Grand Finale!</button>
+  </div>
+</section>
+
+<canvas id="confettiCanvas"></canvas>
+
+<footer class="footer">
+  <p>Made with 💗 just for you</p>
+  <p class="footer-sub">Happy Birthday — today, tomorrow, and always.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
