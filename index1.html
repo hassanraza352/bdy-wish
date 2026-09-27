@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise for Ayesha</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="corner tl"></div>
+  <div class="corner tl soft"></div>
+  <div class="corner br"></div>
+  <div class="corner br soft"></div>
+
+  <div class="topbar">
+    <span class="tag-eyebrow">birthday magic · blow the candles · today is yours</span>
+    <span></span>
+  </div>
+
+  <main class="page">
+    <p class="eyebrow">a little surprise</p>
+    <h1 class="title serif">Happy Birthday<br><em>Ayesha!</em></h1>
+    <p class="subtitle">Today is wrapped just for you — blow out the candles and open what's next.</p>
+
+    <div class="cake-wrap">
+      <div class="cake">
+        <div class="candles" id="candles">
+          <div class="candle"><div class="flame"></div><div class="smoke"></div></div>
+          <div class="candle"><div class="flame"></div><div class="smoke"></div></div>
+          <div class="candle"><div class="flame"></div><div class="smoke"></div></div>
+        </div>
+        <div class="tier tier1"><div class="dots"><span></span><span></span><span></span></div></div>
+        <div class="tier tier2"><div class="dots"><span></span><span></span><span></span><span></span></div></div>
+        <div class="tier tier3"><div class="dots"><span></span><span></span><span></span><span></span><span></span></div></div>
+      </div>
+    </div>
+
+    <button class="btn" id="blowBtn">Blow the Candles 🎂</button>
+    <div class="fade-wait" id="waitMsg">
+      Yay! The candles are out! ✨<br><span class="script" style="font-size:1.05rem;">Now let the birthday magic begin…</span>
+    </div>
+    <a href="gifts.html" class="btn ghost" id="continueBtn" style="margin-top:18px; display:none;">Continue →</a>
+  </main>
+
+  <footer class="credit">made with love, one page at a time 🤍</footer>
+
+  <script src="js/petals.js"></script>
+  <script src="js/widgets.js"></script>
+  <script>
+    const blowBtn = document.getElementById('blowBtn');
+    const candles = document.querySelectorAll('.candle');
+    const waitMsg = document.getElementById('waitMsg');
+    const continueBtn = document.getElementById('continueBtn');
+
+    blowBtn.addEventListener('click', () => {
+      candles.forEach((c, i) => setTimeout(() => c.classList.add('out'), i * 180));
+      blowBtn.disabled = true;
+      setTimeout(() => {
+        waitMsg.classList.add('show');
+        continueBtn.style.display = 'inline-flex';
+      }, candles.length * 180 + 500);
+    });
+  </script>
+</body>
+</html>

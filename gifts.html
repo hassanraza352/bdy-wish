@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Your Gifts — Ayesha</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="corner tl soft"></div>
+  <div class="corner br soft"></div>
+
+  <div class="topbar">
+    <a href="index.html" class="back-link">← Back</a>
+    <span class="tag-eyebrow">just for you</span>
+  </div>
+
+  <main class="page">
+    <p class="eyebrow">a gift for each little moment</p>
+    <h1 class="title serif">Open each gift to<br>discover what's inside</h1>
+      <div class="reveal-card" id="revealCard">
+      <div class="k" id="revealTitle"></div>
+      <p id="revealText"></p>
+    </div>
+
+    <div class="gift-field" id="giftField">
+      <div class="gift g1" style="top:38%; left:10%;" data-key="g1">
+        <div class="tag">Open me</div>
+        <div class="bow">🎀</div>
+        <div class="lid"></div>
+        <div class="box"><div class="ribbon-v"></div><div class="ribbon-h"></div></div>
+      </div>
+      <div class="gift g2" style="top:12%; left:calc(50% - 48px);" data-key="g2">
+        <div class="tag">For you</div>
+        <div class="bow">🎀</div>
+        <div class="lid"></div>
+        <div class="box"><div class="ribbon-v"></div><div class="ribbon-h"></div></div>
+      </div>
+      <div class="gift g3" style="top:40%; right:10%;" data-key="g3">
+        <div class="tag">Special one</div>
+        <div class="bow">🎀</div>
+        <div class="lid"></div>
+        <div class="box"><div class="ribbon-v"></div><div class="ribbon-h"></div></div>
+      </div>
+    </div>
+
+  
+
+    <div class="fade-wait" id="doneMsg" style="margin-top:26px;">All the gifts are open ☺</div>
+    <a href="scrapbook.html" class="btn" id="continueBtn" style="margin-top:16px; display:none;">Continue the Story →</a>
+  </main>
+
+  <footer class="credit">tap every box, none of them bite 🎁</footer>
+
+  <script src="js/petals.js"></script>
+  <script src="js/widgets.js"></script>
+  <script>
+    const messages = {
+      g1: { title: 'A Little Memory', text: 'Remember this day? I still smile every time I think about it.' },
+      g2: { title: 'Something For You', text: 'You make ordinary days feel like celebrations. The world is brighter with you in it.' },
+      g3: { title: 'One More Surprise', text: "There's still more waiting for you… keep going." }
+    };
+
+    const gifts = document.querySelectorAll('.gift');
+    const revealCard = document.getElementById('revealCard');
+    const revealTitle = document.getElementById('revealTitle');
+    const revealText = document.getElementById('revealText');
+    const doneMsg = document.getElementById('doneMsg');
+    const continueBtn = document.getElementById('continueBtn');
+    let openedCount = 0;
+
+    gifts.forEach(g => {
+      g.addEventListener('click', () => {
+        if (g.classList.contains('opened')) return;
+        g.classList.add('opened');
+        openedCount++;
+
+        const m = messages[g.dataset.key];
+        revealTitle.textContent = m.title;
+        revealText.textContent = m.text;
+        revealCard.classList.remove('show');
+        void revealCard.offsetWidth;
+        revealCard.classList.add('show');
+
+        if (openedCount === gifts.length) {
+          setTimeout(() => {
+            doneMsg.classList.add('show');
+            continueBtn.style.display = 'inline-flex';
+          }, 500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

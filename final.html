@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Ayesha!</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="corner tl soft"></div>
+  <div class="corner br soft"></div>
+
+  <div class="topbar">
+    <a href="letter.html" class="back-link">← Back</a>
+    <span class="tag-eyebrow">today it's all about you ♡</span>
+  </div>
+
+  <main class="page" id="finalPage">
+    <p class="eyebrow">celebrate</p>
+    <h1 class="title serif">Happy Birthday, Ayesha!</h1>
+    <p class="subtitle" id="wishLine">One last little wish — just for you.</p>
+
+    <div class="cake-wrap" style="position:relative;">
+      <div class="balloon" style="background:#e79ab5; top:-40px; left:-70px; animation: floaty 4s ease-in-out infinite;"></div>
+      <div class="balloon" style="background:#f3c96a; top:-20px; right:-80px; animation: floaty 5s ease-in-out infinite .4s;"></div>
+      <div class="balloon" style="background:#b98be0; top:20px; right:-40px; width:30px; height:40px; animation: floaty 4.5s ease-in-out infinite .8s;"></div>
+      <div class="cake">
+        <div class="candles">
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+        </div>
+        <div class="tier tier1"><div class="dots"><span></span><span></span><span></span></div></div>
+        <div class="tier tier2"><div class="dots"><span></span><span></span><span></span><span></span></div></div>
+        <div class="tier tier3"><div class="dots"><span></span><span></span><span></span><span></span><span></span></div></div>
+      </div>
+    </div>
+
+    <p class="subtitle script" id="wishFooter" style="font-size:1.2rem; color:var(--rose-deep);">May this year bring you everything your heart is hoping for. ♡<br>Happy Birthday, Ayesha.</p>
+
+    <button class="btn" id="wishBtn" style="margin-top:22px;">Make One Last Wish ✨</button>
+    <a href="index.html" class="btn ghost" id="replayBtn" style="margin-top:14px; display:none;">Replay the Surprise ↺</a>
+  </main>
+
+  <footer class="credit">the end… of this little surprise, not of the celebration 🎉</footer>
+
+  <div id="confettiLayer" style="position:fixed; inset:0; pointer-events:none; z-index:6;"></div>
+
+  <script src="js/petals.js"></script>
+  <script src="js/widgets.js"></script>
+  <script>
+    const wishBtn = document.getElementById('wishBtn');
+    const replayBtn = document.getElementById('replayBtn');
+    const confettiLayer = document.getElementById('confettiLayer');
+    const colors = ['#b23458', '#e79ab5', '#f3c96a', '#b98be0', '#8c1f3f'];
+
+    function burstConfetti() {
+      for (let i = 0; i < 60; i++) {
+        const el = document.createElement('div');
+        const size = 6 + Math.random() * 6;
+        el.style.position = 'absolute';
+        el.style.width = size + 'px';
+        el.style.height = size * 0.4 + 'px';
+        el.style.background = colors[Math.floor(Math.random() * colors.length)];
+        el.style.left = 50 + (Math.random() - 0.5) * 20 + 'vw';
+        el.style.top = '40vh';
+        el.style.opacity = '0.95';
+        confettiLayer.appendChild(el);
+
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 120 + Math.random() * 260;
+        const x = Math.cos(angle) * dist;
+        const y = Math.sin(angle) * dist - 80;
+        const rot = Math.random() * 720 - 360;
+
+        el.animate(
+          [
+            { transform: 'translate(0,0) rotate(0deg)', opacity: 1 },
+            { transform: `translate(${x}px, ${y + 260}px) rotate(${rot}deg)`, opacity: 0 }
+          ],
+          { duration: 1800 + Math.random() * 900, easing: 'cubic-bezier(.2,.7,.3,1)' }
+        ).onfinish = () => el.remove();
+      }
+    }
+
+    wishBtn.addEventListener('click', () => {
+      burstConfetti();
+      wishBtn.disabled = true;
+      setTimeout(() => {
+        replayBtn.style.display = 'inline-flex';
+      }, 900);
+    });
+  </script>
+</body>
+</html>

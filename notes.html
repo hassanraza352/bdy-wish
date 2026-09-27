@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Things I Love About You — Ayesha</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="scrapbook.html" class="back-link">← Back</a>
+    <span class="tag-eyebrow">from the heart</span>
+  </div>
+
+  <main class="page">
+    <p class="eyebrow">a little collection</p>
+    <h1 class="title serif">Things I Love About You</h1>
+    <p class="subtitle">Tap the little notes to discover what I love about you.</p>
+
+    <div class="notes-board" id="board">
+      <div class="sticky" data-i="0" style="top:8%; left:10%; background:#f7d9c4; transform:rotate(-8deg);">💛</div>
+      <div class="sticky" data-i="1" style="top:6%; right:12%; background:#e6d4f2; transform:rotate(7deg);">💌</div>
+      <div class="sticky" data-i="2" style="top:38%; left:4%; background:#cfe7d8; transform:rotate(5deg);">🌿</div>
+      <div class="sticky" data-i="3" style="bottom:8%; left:16%; background:#f6e6a8; transform:rotate(-4deg);">✨</div>
+      <div class="sticky" data-i="4" style="bottom:6%; right:20%; background:#f3c6d3; transform:rotate(9deg);">❤️</div>
+      <div class="sticky" data-i="5" style="top:36%; right:6%; background:#c9e3f0; transform:rotate(-6deg);">🦋</div>
+      <div class="sticky" data-i="6" style="top:4%; left:44%; background:#eecfe8; transform:rotate(3deg);">🌷</div>
+
+      <div class="center-note" id="centerNote">Tap a little note ♡</div>
+    </div>
+
+    <p class="progress-line"><span id="progressCount">0</span> / 7 little secrets discovered</p>
+
+    <div class="fade-wait" id="doneMsg" style="margin-top:4px;">
+      Those are only a few of the reasons I adore you. ♡
+    </div>
+    <a href="letter.html" class="btn" id="continueBtn" style="margin-top:16px; display:none;">Open My Letter →</a>
+  </main>
+
+  <footer class="credit">seven little truths, all about you 🤍</footer>
+
+  <script src="js/petals.js"></script>
+  <script src="js/widgets.js"></script>
+  <script>
+    const secrets = [
+      { k: 'your heart', v: 'You love in a way that makes the world gentler.' },
+      { k: 'your smile', v: "It's the first thing that makes my whole day better." },
+      { k: 'your patience', v: 'You listen like every word I say matters.' },
+      { k: 'your laugh', v: "It's my favourite sound, hands down." },
+      { k: 'your kindness', v: 'You notice people that others walk right past.' },
+      { k: 'your mind', v: 'The way you see things always teaches me something new.' },
+      { k: 'simply you', v: "There's no version of my life I'd rather share." }
+    ];
+
+    const stickies = document.querySelectorAll('.sticky');
+    const centerNote = document.getElementById('centerNote');
+    const progressCount = document.getElementById('progressCount');
+    const doneMsg = document.getElementById('doneMsg');
+    const continueBtn = document.getElementById('continueBtn');
+    let found = 0;
+
+    stickies.forEach(s => {
+      s.addEventListener('click', () => {
+        const i = parseInt(s.dataset.i, 10);
+        const item = secrets[i];
+
+        centerNote.innerHTML = `<span><strong>${item.k}</strong>${item.v}</span>`;
+
+        if (!s.classList.contains('found')) {
+          s.classList.add('found');
+          found++;
+          progressCount.textContent = found;
+          if (found === stickies.length) {
+            setTimeout(() => {
+              doneMsg.classList.add('show');
+              continueBtn.style.display = 'inline-flex';
+            }, 400);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
