@@ -189,6 +189,21 @@ h1.title em{
   box-shadow: inset 0 -6px 0 rgba(255,255,255,.25), 0 8px 18px rgba(140,31,63,.14);
   position:relative;
 }
+.ph {
+  width: 100%;
+  height: 180px;        /* apni required height */
+  overflow: hidden;    /* image div se bahar nahi jayegi */
+  position: relative;
+}
+
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* image div ke andar properly fit */
+  display: block;
+}
+
+
 .tier .dots{
   position:absolute; left:8px; right:8px; bottom:8px;
   display:flex; justify-content:space-between;
