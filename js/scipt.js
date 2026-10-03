@@ -1,7 +1,7 @@
 // ---------- CONFIG ----------
 // Change these to personalize the surprise
 const CONFIG = {
-  year: 2005,
+  year: 2004,
   month: 9,      // 0-indexed => 7 = August
   markedDay: 7,
   dayTagText: "Your Day ❤",
@@ -48,7 +48,7 @@ const monthNames = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE",
 function buildCalendar() {
 
   const CONFIG = {
-  year: 2005,
+  year: 2004,
   month: 9,           // 0-indexed => 7 = August
   markedDay: 4,        // the birthday date
   markedDayWeekday: 0, // 0 = Sunday, 1 = Monday ... 6 = Saturday (which day markedDay falls on)
